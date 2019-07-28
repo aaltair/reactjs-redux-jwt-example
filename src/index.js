@@ -1,12 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "font-awesome/css/font-awesome.min.css";
+import "./assets/css/app.style.css";
+import { BrowserRouter as Router,Route ,Switch,Redirect } from "react-router-dom";
+// eslint-disable-next-line no-unused-vars
+import {GlobalHistory,unregister} from "./helpers";
+import {Account,Main,NotFound} from "./layouts"
+import { Provider } from 'react-redux';
+import {store} from "./redux"
 
-ReactDOM.render(<App />, document.getElementById('root'));
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(
+  <Provider store={store}>
+    <Router >
+       <GlobalHistory />
+    <Switch>
+      <Route path="/account" component={Account} />
+      <Route path="/main" component={Main} />
+      <Redirect exact from="/" to={localStorage.getItem('user')?"/main/home":"/account/login"} />
+      <Route component={NotFound} />
+
+    </Switch>
+  </Router>
+  </Provider>
+    , document.getElementById('root'));
+
+
