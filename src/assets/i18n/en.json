@@ -1,0 +1,8 @@
+{
+    "home": {
+      "title": "Homepage"
+    },
+    "hello": "Hello {name}!",
+    "fallback": "Fallback message",
+    "Server_Error":"Server Error"
+  }

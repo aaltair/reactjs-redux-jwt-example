@@ -57,7 +57,7 @@ class HeaderView extends React.Component{
           </li>
 
           <li className="nav-item">
-            <a className="nav-link" onClick={this.handleLogout}>
+            <a href className="nav-link" onClick={this.handleLogout}>
               Logout
             </a>
           </li>

@@ -1,0 +1,5 @@
+        
+    export const localizationStates = {
+        LOCALIZATION_REQUEST: 'USER_LOCALIZATION_REQUEST',
+        LOCALIZATION_CHANGED: 'USER_LOCALIZATION_CHANGED_SUCCESS',
+    };

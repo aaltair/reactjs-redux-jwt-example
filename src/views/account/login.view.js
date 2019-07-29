@@ -1,12 +1,12 @@
-import React from "react"
 import { connect } from 'react-redux';
-import { userActions } from '../../redux';
+import { userActions,localizationActions } from '../../redux';
 import { getHistory as history} from "../../helpers"
-
+import React from "react" 
+import {  translate } from "react-switch-lang"
 class LoginView extends React.Component {
 constructor(props){
   super(props);
-
+  console.log(this.props);
   this.state={
     username:"",
     password:"",
@@ -14,32 +14,52 @@ constructor(props){
   }
   this.handleChange = this.handleChange.bind(this);
   this.handleSubmit = this.handleSubmit.bind(this);
+  this.langeChange = this.langeChange.bind(this);
+
 }
 componentDidMount(){
   const {loggedIn } = this.props;
   if(loggedIn) history().push("/main/home") ;
+
 }
 handleChange(e) {
   const { name, value } = e.target;
   this.setState({ [name]: value });
 }
 
+langeChange(e) {
+  e.preventDefault();
+
+  const {dispatch, localize  } = this.props;
+
+  if(localize.lang_key === "en")
+  {
+    dispatch(localizationActions.localizationChange("ar"));
+  }
+  else
+  {
+    dispatch(localizationActions.localizationChange("en"));
+  }
+
+}
+
 handleSubmit(e) {
   e.preventDefault();
- 
+
   this.setState({ submitted: true });
   const { username, password } = this.state;
   const { dispatch } = this.props;
-  if (username && password) {
 
+  if (username && password) {
     dispatch(userActions.login(username, password));
-   
   }
 }
 
 render(){
   const { loggingIn } = this.props;
+  const { t } = this.props;
   const { username, password, submitted } = this.state;
+
     return(
   <div className="wrapper fadeInDown">
   <div id="formContent">
@@ -62,7 +82,10 @@ render(){
                             // eslint-disable-next-line jsx-a11y/alt-text
                             <img src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
                         }
+
+<input type="button" className="fadeIn fourth" value={t('home.title')} onClick={this.langeChange}/>
     </form>
+
 
     <div id="formFooter">
       <div className="underlineHover">Forgot Password?</div>
@@ -78,13 +101,19 @@ render(){
 function mapStateToProps(state) {
   const { loggingIn } = state.authentication;
   const { loggedIn } = state.authentication;
+  const { localize } = state.localization;
   return {
       loggingIn,
-      loggedIn
+      loggedIn,
+      localize
   };
+
 }
-const connectedLoginView = connect(mapStateToProps)(LoginView);
+
+const trans =  translate(LoginView)
+const connectedLoginView = connect(mapStateToProps)(trans);
 export { connectedLoginView as LoginView }; 
+
 
 
 

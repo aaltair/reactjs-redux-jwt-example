@@ -22,4 +22,4 @@ class HomeView extends React.Component {
 }
 }
 
-export {HomeView}
+export { HomeView }
