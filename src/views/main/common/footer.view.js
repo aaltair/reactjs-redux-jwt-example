@@ -1,14 +1,32 @@
 import React from "react";
 import { Link } from "react-router-dom";
-function FooterView() {
+import {translate} from "react-switch-lang"
+import {connect} from "react-redux"
+class FooterView extends React.Component{
+  render() {
+ const {t ,  localize} = this.props;
   return (
       
-    <nav className="navbar fixed-bottom navbar-light bg-faded w-100 d-inline-block text-center ">
+    <nav className="navbar fixed-bottom   navbar-light bg-faded w-100 d-inline-block text-center ">
     <Link className="navbar-brand " to="/"> 
-    <i className="fa fa-copyright" aria-hidden="true"></i>
-    copyright 2019-2020
+   {   !localize.isRtl ?<i className="fa fa-copyright px-1" aria-hidden="true"></i>:"" }
+    {t("footerView.copyright" )}
+    { localize.isRtl ?<i className="fa fa-copyright px-1" aria-hidden="true"></i>:"" } 
      </Link>
   </nav>
    );
 }
-export { FooterView };
+}
+
+function mapStateToProps(state) {
+  const { localization } = state;
+  const { localize } = localization;
+  return {
+      localize
+  };
+
+}
+
+
+const tFooterView = connect (mapStateToProps)(translate(FooterView) );
+export { tFooterView as FooterView  };

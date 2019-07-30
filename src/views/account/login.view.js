@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { userActions,localizationActions } from '../../redux';
+import { userActions } from '../../redux';
 import { getHistory as history} from "../../helpers"
 import React from "react" 
 import {  translate } from "react-switch-lang"
@@ -14,11 +14,13 @@ constructor(props){
   }
   this.handleChange = this.handleChange.bind(this);
   this.handleSubmit = this.handleSubmit.bind(this);
-  this.langeChange = this.langeChange.bind(this);
 
 }
 componentDidMount(){
-  const {loggedIn } = this.props;
+
+
+  const {loggedIn ,t } = this.props;
+  document.title =t("loginView.title");
   if(loggedIn) history().push("/main/home") ;
 
 }
@@ -27,21 +29,7 @@ handleChange(e) {
   this.setState({ [name]: value });
 }
 
-langeChange(e) {
-  e.preventDefault();
 
-  const {dispatch, localize  } = this.props;
-
-  if(localize.lang_key === "en")
-  {
-    dispatch(localizationActions.localizationChange("ar"));
-  }
-  else
-  {
-    dispatch(localizationActions.localizationChange("en"));
-  }
-
-}
 
 handleSubmit(e) {
   e.preventDefault();
@@ -69,26 +57,25 @@ render(){
     </div>
 
     <form  onSubmit={this.handleSubmit}>
-      <input type="text" id="login" className="fadeIn second" name="username" placeholder="username" value={username} onChange={this.handleChange}/>
+      <input type="text" id="login" className="fadeIn second" name="username" placeholder={t("loginView.username")} value={username} onChange={this.handleChange}/>
       {submitted && !username &&
                             <div className="help-block">Username is required</div>
                         }
-      <input type="password" id="password" className="fadeIn third" name="password"  placeholder="password" value={password} onChange={this.handleChange}/>
+      <input type="password" id="password" className="fadeIn third" name="password"  placeholder={t("loginView.password")} value={password} onChange={this.handleChange}/>
       {submitted && !password &&
                             <div className="help-block">Password is required</div>
                         }
-      <input type="submit" className="fadeIn fourth" value="Log In"/>
+      <input type="submit" className="fadeIn fourth" value={t("loginView.login")}/>
       {loggingIn &&
                             // eslint-disable-next-line jsx-a11y/alt-text
                             <img src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
                         }
 
-<input type="button" className="fadeIn fourth" value={t('home.title')} onClick={this.langeChange}/>
     </form>
 
 
     <div id="formFooter">
-      <div className="underlineHover">Forgot Password?</div>
+      <div className="underlineHover">{t("loginView.forgotPassword")}</div>
     </div>
 
   </div>

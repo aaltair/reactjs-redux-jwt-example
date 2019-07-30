@@ -11,6 +11,7 @@ export function localizationInit()
     {
         const lang= JSON.parse(localStorage.getItem("localization"));
         setLanguage(lang.lang_key) 
+        document.getElementsByTagName("BODY")[0].setAttribute("class",lang.lang_key ==="ar"?"rtl":""  )    
     }
     else
     {

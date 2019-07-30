@@ -15,13 +15,13 @@ class userAction extends BaseActions{
                 .then(
                     user => { 
                    localStorage.setItem('user', JSON.stringify(user));
-                    this.showSuccess(t()("Login_Successfuly"))
+                    this.showSuccess(t()("loginView.loginOk"))
                      dispatch(success(user));
                      history().push("/main/home");
                     },
                     error => {
                         dispatch(failure(error));
-                        this.showError(t()("Server_Error"))
+                        this.showError(t()("loginView.serverError"))
                     }
                 );
         };

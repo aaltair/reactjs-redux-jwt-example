@@ -1,25 +1,34 @@
 import React from "react";
 import { Link } from "react-router-dom";
-function NotFound() {
+import {translate} from "react-switch-lang"
+
+class NotFound extends React.Component{
+ render() {
+   const {t} =this.props
   return (
     <div className="row">
       <div className="col-md-12">
         <div className="error-template">
-          <h1>Oops!</h1>
-          <h2>404 Not Found</h2>
+          <h1> {t("notFoundLayout.oops")}</h1>
+          <h2>{t("notFoundLayout.notFound")}</h2>
           <div class="error-details">
-            Sorry, an error has occured, Requested page not found!
+          {t("notFoundLayout.errorDetails")}
+          
           </div>
           <div class="error-actions">
             <Link to="/" className="btn btn-primary btn-lg">
               <span className="glyphicon glyphicon-home" />
-              Take Me Home
+              {t("notFoundLayout.TakeMeHome")}
             </Link>
           </div>
         </div>
       </div>
     </div>
   );
+} 
+
 }
 
-export { NotFound };
+const tNotFound = translate(NotFound);
+
+export { tNotFound as NotFound };

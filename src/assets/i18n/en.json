@@ -1,8 +1,40 @@
 {
-    "home": {
-      "title": "Homepage"
+  "loginView":{
+    "title":"Courses | login",
+    "username" : "Username",
+    "password" :"Password",
+    "login":"Login",
+    "forgotPassword": "forgot   Password?",
+    "loginOk":"Login Succsefuly",
+    "serverError":"Server Error"
+   },
+   "headerView":{
+    "courses" : "Courses",
+    "home" :"Home",
+    "about":"About",
+    "logout": "Logout",
+    "lang":"تغير اللعه للعربيه"
+   },
+   "footerView": {
+     "copyright": "copyright 2019 - 2020"
+   },
+    "homeView": {
+      "title":"Courses | Home",
+      "courseApp": "Course App",
+      "courseAppDesc":"Using react and redux",
+      "about":"About Us"
     },
-    "hello": "Hello {name}!",
-    "fallback": "Fallback message",
-    "Server_Error":"Server Error"
+    "notFoundLayout":{
+      "oops":"Oops!",
+      "notFound":"404 Not Found ",
+      "errorDetails" : " Sorry, an error has occured, Requested page not found!",
+      "TakeMeHome":"Take Me Home"
+    },
+    "coursesView":{
+      "courses":"Courses",
+      "title":"Courses | Courses",
+      "serverError":"Error while retrieving data"
+    }
+
+  
   }

@@ -18,10 +18,8 @@ class localizationAction extends BaseActions{
                 localStorage.setItem("localization",JSON.stringify({lang_key , isRtl}) )
                 setLanguage(lang_key);
                 dispatch(success({lang_key , isRtl}))
-                if(lang_key ==="ar")
-                document.getElementById('root').setAttribute("style","direction:rtl"  )
-                if(lang_key ==="en")
-                document.getElementById('root').setAttribute("style","direction:ltr"  )
+                document.getElementsByTagName("BODY")[0].setAttribute("class",lang_key ==="ar"?"rtl":""  )
+         
              
               
             })

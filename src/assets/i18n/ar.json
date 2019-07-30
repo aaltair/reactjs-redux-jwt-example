@@ -1,8 +1,40 @@
 {
-    "home": {
-      "title": "الصفحه الرئيسيه"
+  "loginView":{
+    "title":"الدورات | تسجيل الدخول",
+    "username" : "اسم المستخدم",
+    "password" :"كلمه المرور",
+    "login":"تسجيل الدخول",
+    "forgotPassword": "هل نسيت كلمه المرور",
+    "loginOk":"تم تسجيل الدخول بنجاح",
+    "serverError":"خطا الرجاء التاكد من اسم المستخدم او كلمه المرور"
+   },
+   "headerView":{
+    "courses" : "الدورات",
+    "home" :"الرئيسيه",
+    "about":"من نجن",
+    "lang":"Change To English",
+    "logout":"تسجيل الخروج"
+   },
+    "footerView": {
+      "copyright": "جميع الحقوق محفوظه 2019 - 2020"
     },
-    "hello": "مرحبا {name}!",
-    "fallback": "رساله",
-    "Server_Error":"خطاء بالخادم"
+    "homeView": {
+      "title":"الدورات | الرئيسيه",
+      "courseApp": "تطبيق الدورات",
+      "courseAppDesc":"نستخدم في هذه الدوره  ال (react) و (redux) لانشاء البرنامج",
+      "about":"من نحن"
+    },
+    "notFoundLayout":{
+      "oops":"تبا!",
+      "notFound":"404 غير موجودة",
+      "errorDetails" : "نأسف حدث حظا , لقد طلبت صفحه غير موجوده !",
+      "TakeMeHome":"الى الرئيسيه"
+    },
+    "coursesView":{
+      "courses":"الدورات",
+      "title":"الدورات | الدورات",
+      "serverError":"خطا اثناء استرجاع البيانت"
+      
+    }
+
   }

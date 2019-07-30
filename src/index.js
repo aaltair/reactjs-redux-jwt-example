@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
 import 'react-toastify/dist/ReactToastify.css';
-import "./assets/css/app.style.css";
+import { ToastContainer } from "react-toastify"
+import "./assets/css/app.style.scss";
 import { BrowserRouter as Router,Route ,Switch,Redirect } from "react-router-dom";
 // eslint-disable-next-line no-unused-vars
 import {GlobalHistory,unregister} from "./helpers";
@@ -15,17 +16,20 @@ ReactDOM.render(
   <Provider store={store}>
     <Router >
        <GlobalHistory />
+       
     <Switch>
       <Route path="/account" component={Account} />
       <Route path="/main" component={Main} />
       <Redirect exact from="/" to={localStorage.getItem('user')?"/main/home":"/account/login"} />
       <Route component={NotFound} />
-
+    
     </Switch>
+    <ToastContainer/>
   </Router>
   </Provider>
     , document.getElementById('root'));
-    
+    document.title = "Courses";
+
     localizationInit();
 
 

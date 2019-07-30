@@ -275,4 +275,262 @@ a {
  .w-100 {
      width: 100%;
  }
+ body {
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: unset !important;
+  background-color: #fff;
+}
  
+ .rtl { 
+  direction: rtl;
+
+  // Start Bootstrap Override
+  .text-left {
+    text-align: right !important;
+  }
+  .text-right {
+    text-align: left !important;
+  }
+  
+.pull-right {
+      float: left;
+    }
+
+    .offset-1,
+    .offset-xl-1,
+    .offset-lg-1,
+    .offset-md-1,
+    .offset-sm-1 {
+      margin-right: 8.333333%;
+      margin-left: unset;
+    }
+
+    .offset-2,
+    .offset-xl-2,
+    .offset-lg-2,
+    .offset-md-2,
+    .offset-sm-2 {
+      margin-right: 16.666667%;
+      margin-left: unset;
+    }
+
+    .offset-3,
+    .offset-xl-3,
+    .offset-lg-3,
+    .offset-md-3,
+    .offset-sm-3 {
+      margin-right: 25%;
+      margin-left: unset;
+    }
+
+    .offset-4,
+    .offset-xl-4,
+    .offset-lg-4,
+    .offset-md-4,
+    .offset-sm-4 {
+      margin-right: 33.333333%;
+      margin-left: unset;
+    }
+
+    .offset-5,
+    .offset-lg-5,
+    .offset-xl-5,
+    .offset-md-5,
+    .offset-sm-5 {
+      margin-right: 41.666667%;
+      margin-left: unset;
+    }
+
+    .offset-6,
+    .offset-xl-6,
+    .offset-lg-6,
+    .offset-md-6,
+    .offset-sm-6 {
+      margin-right: 50%;
+      margin-left: unset;
+    }
+
+    .offset-7,
+    .offset-xl-7,
+    .offset-lg-7,
+    .offset-md-7,
+    .offset-sm-7 {
+      margin-right: 58.333333%;
+      margin-left: unset;
+    }
+
+    .offset-8,
+    .offset-xl-8,
+    .offset-lg-8,
+    .offset-md-8,
+    .offset-sm-8 {
+      margin-right: 66.666667%;
+      margin-left: unset;
+    }
+
+    .offset-9,
+    .offset-xl-9,
+    .offset-lg-9,
+    .offset-md-9,
+    .offset-sm-9 {
+      margin-right: 75%;
+    }
+
+    .offset-10,
+    .offset-xl-10,
+    .offset-lg-10,
+    .offset-md-10,
+    .offset-sm-10 {
+      margin-right: 83.333333%;
+      margin-left: unset;
+    }
+
+    .offset-11,
+    .offset-xl-11,
+    .offset-lg-11,
+    .offset-md-11,
+    .offset-sm-11 {
+      margin-right: 91.666667%;
+      margin-left: unset;
+    }
+ 
+
+  .pull-right {
+    float: left;
+  }
+
+  .offset-1,
+  .offset-xl-1,
+  .offset-lg-1,
+  .offset-md-1,
+  .offset-sm-1 {
+    margin-right: 8.333333%;
+    margin-left: unset;
+  }
+
+  .offset-2,
+  .offset-xl-2,
+  .offset-lg-2,
+  .offset-md-2,
+  .offset-sm-2 {
+    margin-right: 16.666667%;
+    margin-left: unset;
+  }
+
+  .offset-3,
+  .offset-xl-3,
+  .offset-lg-3,
+  .offset-md-3,
+  .offset-sm-3 {
+    margin-right: 25%;
+    margin-left: unset;
+  }
+
+  .offset-4,
+  .offset-xl-4,
+  .offset-lg-4,
+  .offset-md-4,
+  .offset-sm-4 {
+    margin-right: 33.333333%;
+    margin-left: unset;
+  }
+
+  .offset-5,
+  .offset-lg-5,
+  .offset-xl-5,
+  .offset-md-5,
+  .offset-sm-5 {
+    margin-right: 41.666667%;
+    margin-left: unset;
+  }
+
+  .offset-6,
+  .offset-xl-6,
+  .offset-lg-6,
+  .offset-md-6,
+  .offset-sm-6 {
+    margin-right: 50%;
+    margin-left: unset;
+  }
+
+  .offset-7,
+  .offset-xl-7,
+  .offset-lg-7,
+  .offset-md-7,
+  .offset-sm-7 {
+    margin-right: 58.333333%;
+    margin-left: unset;
+  }
+
+  .offset-8,
+  .offset-xl-8,
+  .offset-lg-8,
+  .offset-md-8,
+  .offset-sm-8 {
+    margin-right: 66.666667%;
+    margin-left: unset;
+  }
+
+  .offset-9,
+  .offset-xl-9,
+  .offset-lg-9,
+  .offset-md-9,
+  .offset-sm-9 {
+    margin-right: 75%;
+  }
+
+  .offset-10,
+  .offset-xl-10,
+  .offset-lg-10,
+  .offset-md-10,
+  .offset-sm-10 {
+    margin-right: 83.333333%;
+    margin-left: unset;
+  }
+
+  .offset-11,
+  .offset-xl-11,
+  .offset-lg-11,
+  .offset-md-11,
+  .offset-sm-11 {
+    margin-right: 91.666667%;
+    margin-left: unset;
+  }
+
+  .ml-auto, .mx-auto {
+    margin-right: auto !important;
+    margin-left: unset !important;
+}
+  .navbar-brand {
+
+    margin-left: 1rem;
+    margin-right: unset !important
+  }
+
+  .dropdown-menu-right {
+    right: auto;
+    left: 0;
+}
+  
+@media (min-width: 576px)
+{
+    .navbar-expand-sm .navbar-collapse {
+    display: flex!important;
+    flex-basis: auto;
+    flex-grow: unset !important;
+}
+}
+
+// End Bootstrap Override
+}
+
+
+.ml-auto, .mx-auto {
+  margin-left: auto!important;
+  margin-right: unset !important
+}
