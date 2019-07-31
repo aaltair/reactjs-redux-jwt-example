@@ -10,6 +10,7 @@ class courseAction extends BaseActions{
             CourseService.getAllCourseWithAuthor(pageIndex, pageSize)
                 .then(
                     courses => {                
+                   
                      dispatch(success({...courses,pageIndex,pageSize}));
                
                     },

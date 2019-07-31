@@ -33,7 +33,11 @@
     "coursesView":{
       "courses":"الدورات",
       "title":"الدورات | الدورات",
-      "serverError":"خطا اثناء استرجاع البيانت"
+      "serverError":"خطا اثناء استرجاع البيانت",
+      "courseName":"اسم الدوره",
+      "courseCategory": "تصنيف الدوره",
+      "authorName":"اسم المؤلف",
+      "action":"..."
       
     }
 

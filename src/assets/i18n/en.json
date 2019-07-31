@@ -33,7 +33,11 @@
     "coursesView":{
       "courses":"Courses",
       "title":"Courses | Courses",
-      "serverError":"Error while retrieving data"
+      "serverError":"Error while retrieving data",
+      "courseName":"Course Name",
+      "courseCategory":"Course Category",
+      "authorName":"ِAuthor Name",
+      "action":"ِaction"
     }
 
   

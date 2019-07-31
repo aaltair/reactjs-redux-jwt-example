@@ -8,7 +8,7 @@ const initialState = {
   course: {},
   loading: false,
   pageIndex:0,
-  PageSize:0
+  pageSize:0
 };
 export function courses(state = initialState, action) {
   switch (action.type) {
@@ -21,15 +21,16 @@ export function courses(state = initialState, action) {
         course: {},
         loading: true,
         pageIndex:action.pageIndex,
-        PageSize:action.PageSize
+        pageSize:action.PageSize
       };
     case CourseStates.GET_ALL_COURSES_SUCCESS:
+      
       return {
         courses: action.courses,
         course: {},
         loading: false,
-        pageIndex:action.pageIndex,
-        PageSize:action.PageSize
+        pageIndex:action.courses.pageIndex,
+        pageSize:action.courses.pageSize
       };
     case CourseStates.GET_ALL_COURSES_FAILURE:
       return {};

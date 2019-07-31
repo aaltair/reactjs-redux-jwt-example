@@ -525,10 +525,16 @@ a {
     flex-grow: unset !important;
 }
 }
+.pagination{
+  padding-right: 0px
+}
 
 // End Bootstrap Override
 }
 
+.pagination{
+  padding-left: 0px
+}
 
 .ml-auto, .mx-auto {
   margin-left: auto!important;
