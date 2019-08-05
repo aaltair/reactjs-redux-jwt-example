@@ -12,6 +12,7 @@ import {Account,Main,NotFound} from "./layouts"
 import { Provider } from 'react-redux';
 import {store} from "./redux"
 import {localizationInit} from "./helpers"
+localizationInit();
 ReactDOM.render(
   <Provider store={store}>
     <Router >
@@ -30,6 +31,6 @@ ReactDOM.render(
     , document.getElementById('root'));
     document.title = "Courses";
 
-    localizationInit();
+ 
 
 

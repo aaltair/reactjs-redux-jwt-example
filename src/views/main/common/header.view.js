@@ -92,6 +92,7 @@ function mapStateToProps(state) {
   const {  authentication ,localization } = state;
   const { user } = authentication;
   const { localize } = localization;
+  console.log(localize)
   return {
       user,
       localize

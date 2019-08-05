@@ -1,7 +1,7 @@
 import { localizationStates } from '../states';
 
 let localize = JSON.parse(localStorage.getItem('localization'));
-const initialState = localize ? {localize} : {};
+const initialState = localize ? {localize} : {localize:{lang_key:"en",sRtl:false}};
 
 export function localization(state = initialState, action) {
     switch (action.type) {
